@@ -9,3 +9,11 @@ html, body, #root {
   justify-content: center;
   align-items: center;
 }
+
+.body {
+  width: calc(90% - 1rem);
+  height: calc(80% - 1rem);
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+}
