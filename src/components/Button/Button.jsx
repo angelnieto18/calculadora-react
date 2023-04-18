@@ -19,12 +19,11 @@ const Button = (props) => {
 };
 
 const CalcButton = (props) => {
-  const { input, output } = useContext(calculatorContext);
+  let { input, output, result, setResult } = useContext(calculatorContext);
 
   const handleClick = () => {
     const inputText = input.current.value;
     const lastChar = inputText.at(-1);
-    let result;
 
     if (
       lastChar === '1' ||
@@ -38,7 +37,7 @@ const CalcButton = (props) => {
       lastChar === '9' ||
       lastChar === '0'
     ) {
-      result = eval(inputText);
+      setResult((result = eval(inputText)));
       output.current.textContent = result;
     } else {
       console.error('No es un número');

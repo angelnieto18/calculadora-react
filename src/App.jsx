@@ -1,15 +1,17 @@
-import { createContext, useRef } from 'react';
+import { createContext, useRef, useState } from 'react';
 import { Button, CalcButton, ClearButton } from './components/Button/Button';
 import './App.css';
 
 export const calculatorContext = createContext(null);
 
 const App = () => {
+  const [result, setResult] = useState(0);
+
   const input = useRef(null);
   const output = useRef(null);
 
   return (
-    <calculatorContext.Provider value={{ input, output }}>
+    <calculatorContext.Provider value={{ input, output, result, setResult }}>
       <div className="body">
         <div className="body__input-container">
           <label>
@@ -17,7 +19,9 @@ const App = () => {
           </label>
         </div>
         <div className="body__output-container">
-          <h1 className="output" ref={output}></h1>
+          <h1 className="output" ref={output}>
+            {result}
+          </h1>
         </div>
         <div className="body__buttons-container">
           <Button value="9" />
