@@ -6,14 +6,18 @@ export const calculatorContext = createContext(null);
 
 const App = () => {
   const input = useRef(null);
+  const output = useRef(null);
 
   return (
-    <calculatorContext.Provider value={input}>
+    <calculatorContext.Provider value={{ input, output }}>
       <div className="body">
-        <div className="body__output-container">
+        <div className="body__input-container">
           <label>
             <input type="text" ref={input} />
           </label>
+        </div>
+        <div className="body__output-container">
+          <h1 className="output" ref={output}></h1>
         </div>
         <div className="body__buttons-container">
           <Button value="9" />

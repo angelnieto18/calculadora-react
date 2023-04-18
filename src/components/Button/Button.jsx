@@ -3,7 +3,7 @@ import { calculatorContext } from '../../App';
 import './button.css';
 
 const Button = (props) => {
-  const input = useContext(calculatorContext);
+  const { input, output } = useContext(calculatorContext);
 
   const btn = useRef(null);
 
@@ -19,14 +19,14 @@ const Button = (props) => {
 };
 
 const CalcButton = (props) => {
-  const input = useContext(calculatorContext);
+  const { input, output } = useContext(calculatorContext);
 
   const calcBtn = useRef(null);
 
   const handleClick = () => {
     const inputText = input.current.value;
     const lastChar = inputText.at(-1);
-    let result = 0;
+    let result;
 
     if (
       lastChar === '1' ||
@@ -41,7 +41,7 @@ const CalcButton = (props) => {
       lastChar === '0'
     ) {
       result = eval(inputText);
-      console.log(result);
+      output.current.textContent = result;
     } else {
       console.error('No es un número');
     }
