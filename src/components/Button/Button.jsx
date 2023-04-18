@@ -21,8 +21,6 @@ const Button = (props) => {
 const CalcButton = (props) => {
   const { input, output } = useContext(calculatorContext);
 
-  const calcBtn = useRef(null);
-
   const handleClick = () => {
     const inputText = input.current.value;
     const lastChar = inputText.at(-1);
@@ -48,10 +46,24 @@ const CalcButton = (props) => {
   };
 
   return (
-    <button value={props.value} ref={calcBtn} onClick={handleClick}>
+    <button value={props.value} onClick={handleClick}>
       {props.value}
     </button>
   );
 };
 
-export { Button, CalcButton };
+const ClearButton = (props) => {
+  const { input, output } = useContext(calculatorContext);
+
+  const handleClick = () => {
+    input.current.value = '';
+  };
+
+  return (
+    <button value={props.value} onClick={handleClick}>
+      {props.value}
+    </button>
+  );
+};
+
+export { Button, CalcButton, ClearButton };

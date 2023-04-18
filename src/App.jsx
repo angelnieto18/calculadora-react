@@ -1,5 +1,5 @@
 import { createContext, useRef } from 'react';
-import { Button, CalcButton } from './components/Button/Button';
+import { Button, CalcButton, ClearButton } from './components/Button/Button';
 import './App.css';
 
 export const calculatorContext = createContext(null);
@@ -35,6 +35,7 @@ const App = () => {
           <Button value="*" />
           <Button value="/" />
           <CalcButton value="=" />
+          <ClearButton value="c" />
         </div>
       </div>
     </calculatorContext.Provider>
