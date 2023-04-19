@@ -12,7 +12,7 @@ const Button = (props) => {
   };
 
   return (
-    <button value={props.value} ref={btn} onClick={handleClick}>
+    <button className='button' value={props.value} ref={btn} onClick={handleClick}>
       {props.value}
     </button>
   );
@@ -45,7 +45,7 @@ const CalcButton = (props) => {
   };
 
   return (
-    <button value={props.value} onClick={handleClick}>
+    <button id='calcButton' value={props.value} onClick={handleClick}>
       {props.value}
     </button>
   );
@@ -59,7 +59,7 @@ const ClearButton = (props) => {
   };
 
   return (
-    <button value={props.value} onClick={handleClick}>
+    <button id='clearButton' value={props.value} onClick={handleClick}>
       {props.value}
     </button>
   );
