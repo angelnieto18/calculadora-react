@@ -1,7 +1,7 @@
 html, body, #root {
   height: 100%;
   margin: 0;
-  background: #2b2d42;
+  background: #353535;
 }
 
 #root{
@@ -16,9 +16,9 @@ html, body, #root {
   grid-template-rows: 10% 10% 1fr;
   width: calc(90% - 1rem);
   height: calc(80% - 1rem);
-  background: #fff;
   border-radius: 1rem;
   padding: 1rem;
+  background: #edf2f4;
 }
 
 .body__input-container {
@@ -33,11 +33,11 @@ html, body, #root {
   border: none;
   outline: none;
   padding: 1rem;
-  background: #ccc;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 1rem;
   letter-spacing: 1px;
+  background: #d9d9d9;
 }
 
 .body__output-container {
@@ -57,6 +57,6 @@ html, body, #root {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-column: 1 / 3;
 }

@@ -3,7 +3,7 @@ import { calculatorContext } from '../../App';
 import './button.css';
 
 const Button = (props) => {
-  const { input, output } = useContext(calculatorContext);
+  const { input } = useContext(calculatorContext);
 
   const btn = useRef(null);
 
@@ -13,7 +13,7 @@ const Button = (props) => {
 
   return (
     <button className='button' value={props.value} ref={btn} onClick={handleClick}>
-      {props.value}
+      {props.content}
     </button>
   );
 };
@@ -65,4 +65,21 @@ const ClearButton = (props) => {
   );
 };
 
-export { Button, CalcButton, ClearButton };
+const EraseButton = (props) => {
+  let { input } = useContext(calculatorContext);
+
+  const handleClick = () => {
+    const inputText = input.current.value;
+    const newString = inputText.substring(0, inputText.length - 1);
+
+    input.current.value = newString;
+  };
+
+  return (
+    <button id='eraseButton' value={props.value} onClick={handleClick}>
+      {props.value}
+    </button>
+  );
+};
+
+export { Button, CalcButton, ClearButton, EraseButton };
